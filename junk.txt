@@ -1,0 +1,98 @@
+# def train_discriminator(discriminator, generator, dataset, batch_size):
+#     # Generate real samples
+#     real_images, real_labels = generate_real_samples(dataset, batch_size)
+#     print(real_images)
+
+#     # Generate fake samples
+#     # noise = np.random.randn(batch_size, latent_dim)
+#     # noise = np.random.randn(batch_size, 1, 1, latent_dim)
+#     noise = np.random.randn(batch_size, 512, 512, 3)
+
+#     fake_images = generator.predict(noise)
+#     fake_labels = np.zeros((batch_size, 1))  # Label fake images as 0 (fake)
+#     print(fake_images)
+
+#     # Train discriminator on real and fake samples
+#     d_loss_real = discriminator.train_on_batch(real_images, real_labels)
+#     d_loss_fake = discriminator.train_on_batch(fake_images, fake_labels)
+#     d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+#     return d_loss
+
+
+# def train_discriminator(discriminator, generator, dataset, batch_size):
+#     # Generate real samples
+#     real_images_tuple, real_labels = generate_real_samples(dataset, batch_size)
+
+#     # Extract only the images from the tuple
+#     real_images = real_images_tuple[0]
+
+#     # Remove the extra dimension from real_images
+#     real_images = real_images[:, 0]
+
+#     # Generate fake samples
+#     noise = np.random.randn(batch_size, 512, 512, 3)
+    
+#     # Remove the extra dimension from fake_images
+#     fake_images = generator.predict(noise)[:, 0]
+
+#     fake_labels = np.zeros((batch_size, 1))  # Label fake images as 0 (fake)
+
+#     # Train discriminator on real and fake samples
+#     d_loss_real = discriminator.train_on_batch(real_images, real_labels)
+#     d_loss_fake = discriminator.train_on_batch(fake_images, fake_labels)
+#     d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+#     return d_loss
+
+# def train_discriminator(discriminator, generator, dataset, batch_size):
+#     # Generate real samples
+#     real_images_tuple, real_labels = generate_real_samples(dataset, batch_size)
+
+#     # Extract only the images from the tuple
+#     real_images = real_images_tuple[0]
+
+#     # Remove the extra dimension from real_images
+#     real_images = real_images[:, 0]
+
+#     # Generate fake samples
+#     noise = np.random.randn(batch_size, 512, 512, 3)
+    
+#     # Remove the extra dimension from fake_images
+#     fake_images = generator.predict(noise)[:, 0]
+
+#     fake_labels = np.zeros((batch_size, 1))  # Label fake images as 0 (fake)
+
+#     # Reshape real_labels to match the expected shape
+#     real_labels = real_labels.reshape(batch_size, 1)
+
+#     # Train discriminator on real and fake samples
+#     d_loss_real = discriminator.train_on_batch(real_images, real_labels)
+#     d_loss_fake = discriminator.train_on_batch(fake_images, fake_labels)
+#     d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+#     return d_loss
+
+# def train_discriminator(discriminator, generator, dataset, batch_size):
+#     # Generate real samples
+#     real_images_tuple, real_labels = generate_real_samples(dataset, batch_size)
+
+#     # Extract only the images from the tuple
+#     real_images = real_images_tuple[0]
+
+#     # Remove the extra dimension from real_images
+#     real_images = real_images[:, 0]
+
+#     # Generate fake samples
+#     noise = np.random.randn(batch_size, 512, 512, 3)
+    
+#     # Remove the extra dimension from fake_images
+#     fake_images = generator.predict(noise)[:, 0]
+
+#     fake_labels = np.zeros((batch_size, 1))  # Label fake images as 0 (fake)
+
+#     # Reshape real_labels to match the expected shape
+#     real_labels = tf.reshape(real_labels, (batch_size, 1))
+
+#     # Train discriminator on real and fake samples
+#     d_loss_real = discriminator.train_on_batch(real_images, real_labels)
+#     d_loss_fake = discriminator.train_on_batch(fake_images, fake_labels)
+#     d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+#     return d_loss
