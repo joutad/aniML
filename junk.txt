@@ -96,3 +96,138 @@
 #     d_loss_fake = discriminator.train_on_batch(fake_images, fake_labels)
 #     d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
 #     return d_loss
+
+# Example usage
+# Assuming dataset is defined elsewhere and properly structured
+# dataset = ...
+# batch_size = 32
+# real_images, labels = generate_real_samples(dataset, batch_size)
+# def generate_real_samples(dataset, batch_size):
+#     # Shuffle and batch the dataset
+#     dataset = dataset.shuffle(buffer_size=1000).batch(batch_size)
+#     # Get a batch of images and labels
+#     iterator = iter(dataset)
+#     real_images = next(iterator)
+
+#     # Print to understand the structure
+#     print("Type of real_images:", type(real_images))
+    
+#     # if isinstance(real_images, tuple):
+#         # for idx, item in enumerate(real_images):
+#             # print(f"Index {idx} in real_images:", item)
+    
+#     # Check if real_images contains the actual tensor
+#     if isinstance(real_images, tuple):
+#         real_images = real_images[0]  # Assuming the tensor is at index 0
+    
+#     print("Shape of real_images tensor:", real_images.shape)
+    
+#     # Ensure the shape of real_images is as expected
+#     expected_shape = [batch_size, 512, 512, 3]  # Define the expected shape
+#     if real_images.shape != expected_shape:
+#         # print(tf.shape(real_images))
+#         real_images = tf.reshape(real_images, shape=[1, 512, 512, 3])
+    
+#     labels = tf.ones((batch_size, 1))  # Label real images as 1 (real)
+#     return real_images, labels
+
+# Example usage
+# Assuming dataset is defined elsewhere and properly structured
+# dataset = ...
+# batch_size = 32
+# real_images, labels = generate_real_samples(dataset, batch_size)
+
+
+# Define function to generate batches of real images
+# def generate_real_samples(dataset, batch_size):
+#     # Shuffle and batch the dataset
+#     dataset = dataset.shuffle(buffer_size=1000).batch(batch_size)
+#     # Get a batch of images and labels
+#     iterator = iter(dataset)
+#     real_images = next(iterator)
+
+#     # Print to understand the structure
+#     print("Type of real_images:", type(real_images))
+    
+#     if isinstance(real_images, tuple):
+#         for idx, item in enumerate(real_images):
+#             print(f"Index {idx} in real_images:", item)
+    
+#     # Check if real_images contains the actual tensor
+#     if isinstance(real_images, tuple):
+#         real_images = real_images[0]  # Assuming the tensor is at index 0
+    
+#     print("Shape of real_images tensor:", real_images.shape)
+    
+#     # Ensure the shape of real_images is as expected
+#     expected_shape = (batch_size, 512, 512, 3)  # Define the expected shape
+#     if real_images.shape != expected_shape:
+#         # Adjust this part based on actual content
+#         # If there's an extra leading dimension (e.g., 1), remove it
+#         if real_images.shape[0] == 1:
+#             real_images = tf.reshape(real_images, expected_shape)
+#         else:
+#             real_images = tf.reshape(real_images, expected_shape)
+    
+#     labels = tf.ones((batch_size, 1))  # Label real images as 1 (real)
+#     return real_images, labels
+
+# def generate_real_samples(dataset, batch_size):
+#     # Shuffle and batch the dataset
+#     dataset = dataset.shuffle(buffer_size=1000).batch(batch_size)
+#     # Get a batch of images and labels
+#     iterator = iter(dataset)
+#     real_images = next(iterator)
+
+#     # Print to understand the structure
+#     print("Type of real_images:", type(real_images))
+#     # print("Shape of real_images ßtensor:", real_images.shape)
+
+#     # Check if real_images contains the actual tensor
+#     if isinstance(real_images, tuple):
+#         real_images = real_images[0]  # Assuming the tensor is at index 0
+    
+#     print("Shape of real_images tensor after extraction:", real_images.shape)
+
+#     # Ensure the shape of real_images is as expected
+#     expected_shape = (batch_size, 512, 512, 3)  # Define the expected shape
+#     if real_images.shape != expected_shape:
+#         # Remove the extra dimension if it exists
+#         if real_images.shape[1] == 3:
+#             real_images = tf.reshape(real_images, (batch_size, 512, 512, 3))
+
+#     print("Shape of real_images tensor after reshaping:", real_images.shape)
+
+#     labels = tf.ones((batch_size, 1))  # Label real images as 1 (real)
+#     return real_images, labels
+
+# def generate_real_samples(dataset, batch_size):
+#     # Shuffle and batch the dataset
+#     print(dataset)
+#     dataset = dataset.shuffle(buffer_size=1000).batch(batch_size)
+#     # Get a batch of images and labels
+#     iterator = iter(dataset)
+#     real_images = next(iterator)
+
+#     # Print to understand the structure
+#     print("Type of real_images:", type(real_images))
+#     # print("Shape of real_images tensor:", real_images.shape)
+
+#     # Check if real_images contains the actual tensor
+#     if isinstance(real_images, tuple):
+#         real_images = real_images[0]  # Assuming the tensor is at index 0
+#         print(real_images)
+    
+#     print("Shape of real_images tensor after extraction:", real_images.shape)
+
+#     # Ensure the shape of real_images is as expected
+#     expected_shape = (batch_size, 512, 512, 3)  # Define the expected shape
+#     if real_images.shape != expected_shape:
+#         # Remove the extra dimension if it exists
+#         if real_images.shape[1] == 3:
+#             real_images = tf.reshape(real_images, (batch_size, 512, 512, 3))
+
+#     print("Shape of real_images tensor after reshaping:", real_images.shape)
+
+#     labels = tf.ones((batch_size, 1))  # Label real images as 1 (real)
+#     return real_images, labels
